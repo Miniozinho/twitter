@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Twitter 2.0</title>
+</head>
+<body onload="logarf()">
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<div id="app">
+  <div id="centro">
+    <input id="input" type="text" placeholder="O que esta acontecendo?" v-model="input" v-on:keyup.enter="postar()">
+    <button id="btn" v-on:click="postar"> Tweetar</button>
+   <div style="float:right; margin-top: 0px;">
+    <div style="display: inline-block;" id="ola"></div>
+    <a href="login.html" style="display: inline-block; color:black; background-color: white; border-style:solid; text-decoration: none;">LOGAR/REGISTRAR</a>
+  </div>
+  </div>
+
+
+  <div id="container">
+        <!--fazer login com o v-if-->
+    <div id="elemento" v-for="tweet in tweets">
+      <div id="colim">
+        <img class="fl" id="imagem" src="icon.png">
+        </div>
+        <div id="coldoi">
+        <h1 class="fl">{{tweet.user}}</h1>
+        <br><br>
+      <p id="tuiti" class="fl">{{tweet.text}}</p>
+        <br><br>
+<i style="font-size: 2em;" onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
+<br>
+ 
+      </div>
+           <p class="fl" id="data">{{tweet.data}}</p>
+
+    </div>
+
+ </div>
+ <br>
+</div>
+
+
+
+</body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript">
+	var generate = new Vue({
+    el: '#app',
+    data: {
+    input:"",
+    tweets:[
+      
+    ]
+   },
+  
+  methods:{
+    postar: function postar(){
+        var data = new Date().toLocaleString();
+      var tweet={
+        data, 
+        text:generate.input
+        ,user
+       };
+       generate.tweets.push(tweet);
+    }
+
+  }
+});
+
+var user = localStorage.getItem("acclog");
+    function logarf(){
+
+var m = localStorage.getItem("acclog");
+if (m == ""){ window.location.href = 'login.html';} else {
+  m= "<h3 style='margin-top:0px;'> "+m+"</h3>";
+  document.getElementById('ola').innerHTML = m;
+}
+    }
+
+
+function myFunction(x) {
+  var z = x.style.color;
+  if(z == "blue"){
+    x.style.color = "black";
+  } else {
+    x.style.color = "blue";
+  }
+}
+
+
+</script>
+
+
+<style type="text/css">
+body{
+  background-color:lightblue;
+}
+    #imagem{
+        width:100%;
+        border-radius: 50%;
+
+        margin:0px;
+    }
+	#btn{
+  background-color:#5555d5;
+  border-style:solid;
+        border-color: black;
+  color:white;
+  border-radius:5px;
+height: 2em;
+}
+    .fl{
+        margin:0px;
+       display: inline-block;
+    }
+    #elemento{
+     margin: 10%;
+     border-style: solid;
+     border-color: gray;
+     border-radius: 10px;
+     background-color: white;
+
+    }
+    
+    #tuiti{
+        color:darkblue;
+    }
+    #input{
+      margin-top: 0px;
+       width: 50%;
+       margin-left:12.5%;
+    }
+
+    #container{
+   width: 80%;
+        margin:5%;
+        border-style: solid;
+        border-radius: 10px;
+        background-color: black; 
+    }
+    #colim{
+      width: 20%;
+      margin: 0px;
+      display: inline-block;
+
+    }
+    #coldoi{
+      width: 70%;
+      margin: 0px;
+      float:right;
+    }
+    #data{
+float:right;
+color:white;
+    }
+
+</style>
+</html>

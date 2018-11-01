@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+<script src="login.js"></script>
+ <link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<body onload="carregar()">
+
+  <div class="containerregi" id="um">
+    <h1>Registro</h1>
+    <p>Se registre Abaixo.</p>
+    <hr>
+
+    <label><b>Username</b></label>
+    <input id="username" type="text" placeholder="Digite seu Username">
+
+    <label><b>Senha</b></label>
+    <input id="password" type="password" placeholder="Digite sua Senha" name="psw" required>
+
+    <button  onclick="registra()">Register</button>
+<button onclick="troca()">Ja Possui Uma conta? Faça Login Aqui</button>
+  
+  </div>
+
+  <div class="containerlogin" id="dois">
+ <h1>Login</h1>
+    <p>Logue Abaixo.</p>
+    <hr>
+
+    <label><b>Username</b></label>
+    <input id="login1" type="text" placeholder="Digite seu Username">
+
+    <label><b>Senha</b></label>
+    <input id="login2" name="psw" type="password"  placeholder="Digite sua Senha"  required>
+    <button  onclick="loga()">Entrar</button>
+    <button onclick="troca3()">Ainda nao possui uma conta? faca seu cadastro aqui</button>
+  </div>
+
+<div class="containerlogin" id="treis">
+    <h1>Login Efetuado com sucesso</h1><br>
+    <h1><a href="twitter.html">Clique aqui para voltar a pagina inicial</a></h1>
+</div>
+
+</body>
+</html>
+
