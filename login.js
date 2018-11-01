@@ -5,20 +5,9 @@ function carregar(){
 	if(cont === null){
 	 localStorage.setItem("cont",0);
 	} 
-	//resetar o carrinho
-	//tambem usado qnd a compra eh finalizada
-	resetcart();
 }
-function resetcart(){
-	localStorage.setItem("carrinho" , 0);
-	var lengh = localStorage.getItem("itens");
-	localStorage.setItem("itens", 0);
-	for (var x = 0;x<lengh;x++){
-		localStorage.removeItem("itensid" +x);
-	}
-}
-function registra(){
 
+function registra(){
 var cont = localStorage.getItem("cont");
 
 
@@ -30,12 +19,14 @@ localStorage.setItem("password" + cont,x0);
 
 cont++;
 localStorage.setItem("cont",cont);
-
+alert("Conta Registra");
+troca();
 }
 
 function loga(){
 	var cont = localStorage.getItem("cont");
 	cont++;
+	var p = 0;
 var x0 = (login1.value);
 var x1 = (login2.value);
 
@@ -43,18 +34,16 @@ for (var x = 0;x<cont;x++){
   var z0 =  localStorage.getItem("username" +x);
   var z1 =  localStorage.getItem("password" +x);
   if(x0 == z0 && x1 == z1){
-alert("Login Efetuado com sucesso!");
+p++;
 localStorage.setItem("acclog", x0);
-localStorage.setItem("carrinho", 0);
-localStorage.setItem("itens", 0);
 x = cont;
 troca2();
 } else {
-console.log("try Again");
-}
 
 }
 
+}
+if (p==0) {alert("Usuario ou senha incorretos.")}
 
 }
 

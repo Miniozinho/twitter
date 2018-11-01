@@ -71,7 +71,7 @@ var user = localStorage.getItem("acclog");
     function logarf(){
 
 var m = localStorage.getItem("acclog");
-if (m == ""){ window.location.href = 'login.html';} else {
+if (m == "" || m == null){ window.location.href = 'login.html';} else {
   m= "<h3 style='margin-top:0px;'> "+m+"</h3>";
   document.getElementById('ola').innerHTML = m;
 }
